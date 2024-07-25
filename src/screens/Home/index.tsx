@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from '../../components/Header';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import ListButtons from '../../components/ListButtons';
@@ -6,8 +7,14 @@ import Divider from '../../components/Divider';
 import CreditCard from '../../components/CreditCard';
 import ContentList from '../../components/HorizontalCardList';
 import FindMoreCardList from '../../components/FindMoreCardList';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import type {RoutesParams} from '../../types/routes';
 
-export default function Home({navigation}) {
+type HomeProps = {
+  navigation: NativeStackNavigationProp<RoutesParams>;
+};
+
+export default function Home({navigation}: HomeProps) {
   return (
     <>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
