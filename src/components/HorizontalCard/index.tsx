@@ -1,7 +1,11 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
 
-const HorizontalCard = ({ description }: { description: string }) => {
+type HorizontalCardProps = {
+  description: string;
+};
+
+const HorizontalCard = ({description}: HorizontalCardProps) => {
   return (
     <View style={styles.card}>
       <Text style={styles.text}>{description}</Text>
@@ -12,7 +16,7 @@ const HorizontalCard = ({ description }: { description: string }) => {
 const styles = StyleSheet.create({
   card: {
     width: 263,
-    backgroundColor: "#E4E4E7",
+    backgroundColor: '#E4E4E7',
     borderRadius: 10,
     padding: 20,
   },

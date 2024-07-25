@@ -1,7 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import type {SvgProps} from 'react-native-svg';
 
-const ActionButton = ({IconComponent, title, onPress}: any) => {
+type ActionButtonProps = {
+  IconComponent: React.FC<SvgProps>;
+  title: string;
+  onPress: () => void;
+};
+
+const ActionButton = ({IconComponent, title, onPress}: ActionButtonProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={{gap: 10, alignItems: 'center'}}>
