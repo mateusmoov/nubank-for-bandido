@@ -1,3 +1,4 @@
+import React from 'react';
 import ActionButton from '../../components/ActionButton';
 import {View, Animated} from 'react-native';
 import PixIcon from '../../assets/images/icons/pix.svg';
@@ -5,6 +6,12 @@ import BoletoIcon from '../../assets/images/icons/boleto.svg';
 import TranfearIcon from '../../assets/images/icons/transfer.svg';
 import DepositIcon from '../../assets/images/icons/deposit.svg';
 import PhoneIcon from '../../assets/images/icons/phone.svg';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {ROUTES, type RoutesParams} from '../../types/routes';
+
+type ListButtonsProps = {
+  navigation: NativeStackNavigationProp<RoutesParams>;
+};
 
 const iconItems = [
   {id: 1, title: 'Área Pix', image: PixIcon},
@@ -15,7 +22,7 @@ const iconItems = [
 ];
 const scrollY = new Animated.Value(0);
 
-const ListButtons = ({navigation}) => {
+const ListButtons = ({navigation}: ListButtonsProps) => {
   return (
     <Animated.FlatList
       data={iconItems}
@@ -25,7 +32,7 @@ const ListButtons = ({navigation}) => {
           <ActionButton
             IconComponent={item.image}
             title={item.title}
-            onPress={() => navigation.navigate('Bait')}
+            onPress={() => navigation.navigate(ROUTES.BAIT)}
           />
         </View>
       )}

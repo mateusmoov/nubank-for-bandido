@@ -5,8 +5,9 @@ import Home from './screens/Home';
 import Bait from './screens/Bait';
 import {NativeModules} from 'react-native';
 import '@react-native-firebase/app';
+import {ROUTES, RoutesParams} from './types/routes';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RoutesParams>();
 const {VolumeControl} = NativeModules;
 
 const App = () => {
@@ -16,17 +17,9 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Bait"
-          component={Bait}
-          options={{headerShown: false}}
-        />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name={ROUTES.HOME} component={Home} />
+        <Stack.Screen name={ROUTES.BAIT} component={Bait} />
       </Stack.Navigator>
     </NavigationContainer>
   );

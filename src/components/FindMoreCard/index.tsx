@@ -1,8 +1,14 @@
 // Import necessary components from React Native
-import React from "react";
-import { View, Image, Text, TouchableOpacity, StyleSheet } from "react-native";
+import React from 'react';
+import {View, Image, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
-const FindMoreCard = ({ title, description, imageUrl }: any) => {
+type FindMoreCardProps = {
+  title: string;
+  description: string;
+  imageUrl: string;
+};
+
+const FindMoreCard = ({title, description, imageUrl}: FindMoreCardProps) => {
   return (
     <View style={styles.cardContainer}>
       <Image
@@ -26,14 +32,14 @@ const FindMoreCard = ({ title, description, imageUrl }: any) => {
 const styles = StyleSheet.create({
   cardContainer: {
     width: 236,
-    backgroundColor: "#E4E4E7",
+    backgroundColor: '#E4E4E7',
     borderRadius: 10,
     marginLeft: 20,
     marginBottom: 30,
     marginTop: 30,
   },
   image: {
-    width: "100%",
+    width: '100%',
     height: 119,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
@@ -43,25 +49,25 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 14,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 5,
-    color: "black",
+    color: 'black',
   },
   description: {
     fontSize: 13,
     marginBottom: 10,
-    color: "gray",
+    color: 'gray',
   },
   button: {
-    backgroundColor: "#DA0000",
+    backgroundColor: '#DA0000',
     borderRadius: 23,
     padding: 13,
-    alignItems: "center",
+    alignItems: 'center',
     width: 117,
   },
   buttonText: {
-    color: "#fff",
-    textAlign: "center",
+    color: '#fff',
+    textAlign: 'center',
   },
 });
 
